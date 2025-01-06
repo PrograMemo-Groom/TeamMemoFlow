@@ -1,14 +1,9 @@
-import './App.css';
+import styles from './App.module.scss';
 import {Outlet, Route, Routes} from "react-router-dom";
-import Header from "./pages/Header";
+import Header from "./pages/header/Header";
 import SettingPage from "./pages/setting/SettingPage";
-import SideBar from "./pages/SideBar";
-import styled from "styled-components";
-
-const OutletWrapper = styled.div`
-  padding: 60px 0 0 260px ;
-`
-
+import SideBar from "./pages/sidebar/SideBar";
+import Login from "./pages/user/Login";
 
 function LayOut(){
 
@@ -16,18 +11,19 @@ function LayOut(){
     <>
       <Header/>
       <SideBar/>
-      <OutletWrapper>
+      <div className={styles.container} >
         <Outlet/>
-      </OutletWrapper>
+      </div>
     </>
-  )
+  );
 }
 
 function App() {
   return (
     <Routes>
         <Route path="/" element={<LayOut/>}>
-          <Route path="setting" element={<SettingPage/>}/>
+          <Route index element={<Login/>}/>
+          <Route path="/setting" element={<SettingPage/>}/>
         </Route>
     </Routes>
   );
