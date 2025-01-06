@@ -21,7 +21,9 @@ function LayOut() {
 
 const LayOutWithout = () => {
     return (
-        <Outlet/>
+        <div className={styles.noLayoutContainer}>
+            <Outlet/>
+        </div>
     )
 }
 
