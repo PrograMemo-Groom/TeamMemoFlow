@@ -1,0 +1,17 @@
+@import "./styles/mixins";
+
+.container {
+  padding: 60px 0 0 260px ;
+}
+
+.example {
+  @include flex-center;
+  width: 200px;
+  height: 200px;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+
+.example-btn{
+  @include save-btn(yellow, 10px 20px);
+}
