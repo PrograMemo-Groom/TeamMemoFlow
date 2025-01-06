@@ -4,12 +4,14 @@ const Container = styled.div`
     width: 260px;
     height: 100vh;
     background-color: #D9D9D9;
-
+    position: fixed;
+    top: 0;
+    z-index: 10001;
 `
 const MenuUl = styled.ul`
     display: flex;
     flex-direction: column;
-    padding-top: 20px;
+    padding-top: 80px;
     width: 100%;
 `
 const MenuLi = styled.li`
@@ -45,7 +47,7 @@ const MenuItem = [
   {icon: <FiSettings/>, text: 'Setting'},
 ]
 
-export default function SideBar(){
+const SideBar = ()=>{
   return(
     <Container>
       <MenuUl>
@@ -59,3 +61,5 @@ export default function SideBar(){
     </Container>
   )
 }
+
+export default SideBar;

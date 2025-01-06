@@ -9,6 +9,8 @@ const Container = styled.div`
     background-color: #EBEBEB;
     width: 100%;
     height: 60px;
+    position: absolute;
+    z-index: 10002;
 `
 const LeftBox = styled.div`
     margin-left: 22px;
@@ -24,7 +26,7 @@ const Logo = styled.img`
     height: 38px;
 `
 
-export default function Header(){
+const Header = () => {
   return(
     <Container>
       <LeftBox>
@@ -37,3 +39,5 @@ export default function Header(){
     </Container>
   )
 }
+
+export default Header;
