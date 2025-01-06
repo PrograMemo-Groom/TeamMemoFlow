@@ -1,0 +1,108 @@
+@import "../../styles/mixins";
+@import "../../styles/variables";
+
+// login 전역 설정
+$component-width: 360px;
+$component-margin: 5px;
+$component-border-radius: 8px;
+
+@mixin component($width: $component-width) {
+  display: flex;
+  justify-content: flex-start;
+  width: $width;
+  margin: $component-margin;
+}
+
+@mixin button($color, $background-color, $border:none) {
+  width: $component-width;
+  height: 50px;
+  border-radius: $component-border-radius;
+  outline: none;
+  border: $border;
+  background-color: $background-color;
+  color: $color;
+  margin: $component-margin;
+}
+
+.container {
+  @include flex-start;
+  width: 500px;
+  height: 680px;
+  border: 1px solid #D7D7D7;
+  border-radius: $component-border-radius;
+
+  .wrapper {
+    flex-direction: column;
+    margin: 60px;
+
+    h1, h2 {
+      @include component;
+    }
+    .title {
+      font-size: $font-size-h1;
+      font-weight: bold;
+      padding-bottom: 10px;
+    }
+    .subtitle {
+      font-size: $font-size-h2;
+      font-weight: normal;
+      margin-bottom: 30px;
+      padding-bottom: 10px;
+    }
+
+    .form {
+
+      .inputWrapper {
+        @include component(calc($component-width - 12px));
+        flex-direction: column;
+        border: 1px solid gray;
+        padding: 5px;
+        border-radius: $component-border-radius;
+        margin-bottom: 10px;
+
+        .label {
+          font-size: $font-size-label;
+          padding-left: 3px;
+          margin: $component-margin;
+          user-select: none;
+          cursor: pointer;
+        }
+        .input {
+          font-size: $font-size-base;
+          outline: none;
+          border: none;
+          padding: 4px;
+          margin-left: 4px;
+        }
+      }
+      .findPw {
+        margin: $component-margin * 2;
+        cursor: pointer;
+        user-select: none;
+      }
+
+      button {
+        cursor: pointer;
+      }
+      .loginButton {
+        @include button(white, gray);
+        margin-top: 40px;
+
+        &:hover {
+          background-color: #ffcc2d;
+          color: darken(white, 100%);
+        }
+      }
+      .joinButton {
+        @include button(gray, white, 1px solid gray);
+
+        &:hover {
+          background-color: darken(white, 25%);
+          color: lighten(gray, 100%);
+        }
+      }
+    }
+  }
+
+
+}
