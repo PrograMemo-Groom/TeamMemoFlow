@@ -4,10 +4,14 @@ import './reset.css';
 import './index.css';
 import App from './App';
 import {BrowserRouter as Router} from "react-router-dom";
+import {Provider} from "react-redux";
+import store from './store/Store';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <Router future={{ v7_startTransition: true, v7_relativeSplatPath:true }}>
-    <App/>
-  </Router>
+    <Provider store={store}>
+        <Router future={{v7_startTransition: true, v7_relativeSplatPath: true}}>
+            <App/>
+        </Router>
+    </Provider>
 );
