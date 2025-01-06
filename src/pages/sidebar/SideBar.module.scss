@@ -1,0 +1,47 @@
+@import "../../styles/mixins";
+
+// icon size component 최상단 관리
+$icon-size: 24px;
+
+.container {
+  //margin-top: 60px;
+  width: 260px;
+  height: 100%;
+  position: fixed;
+  background: yellow; // 영역 색상 지정 일부로 해둠
+}
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  padding-top: 60px;
+  width: 100%;
+  cursor: pointer;
+
+  li {
+    height: 64px;
+    cursor: pointer;
+    display: flex;
+    padding-left: 22px;
+    align-items: center;
+    &:hover{
+      background-color: #9F9F9F;
+      border-radius: 8px;
+    }
+    .icon {
+      width: $icon-size;
+      height: $icon-size;
+
+      svg {
+        width: $icon-size;
+        height: $icon-size;
+      }
+    }
+    .text {
+      margin-left: 28px;
+      font-size: 24px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+  }
+}
