@@ -2,5 +2,6 @@
 
 .container{
   @include flex-center;
+  flex-direction: column;
   margin-top: 50px;
 }
