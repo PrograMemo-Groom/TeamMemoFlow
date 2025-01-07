@@ -10,14 +10,14 @@ const Account = () =>{
             <input className={styles.commonInput} placeholder="현재 비밀번호"/>
             <form>
                 <select className={styles.gender}>
-                    <option className={styles.defaultOption} value="" disabled>
+                    <option value="" disabled>
                       성별
                     </option>
                     <option value="option1">남자</option>
                     <option value="option2">여자</option>
                 </select>
                 <select className={styles.birth}>
-                    <option className={styles.defaultOption} value="" disabled>
+                    <option value="" disabled>
                        생년월일
                     </option>
                     <option value="option1">Option 1</option>
