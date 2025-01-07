@@ -20,7 +20,7 @@ const Login = () => {
                     </div>
                     <label className={styles.findPw} onClick={() => navigate("/findpwd")}>비밀번호를 잊으셨나요?</label>
                     <button className={styles.loginButton}>로그인</button>
-                    <button className={styles.joinButton}>회원가입</button>
+                    <button className={styles.joinButton} onClick={() => navigate("/join")}>회원가입</button>
                 </form>
             </div>
 
