@@ -1,7 +1,20 @@
 @import "../../styles/mixins";
+@import "../../styles/variables";
 
 .container{
   @include flex-center;
   flex-direction: column;
   margin-top: 50px;
+  .bottomItem{
+    display: flex;
+    flex-direction: column;
+    width: 740px;
+    gap: 22px;
+    font-size: $font-size-base;
+    font-weight: bold;
+    margin-top: 185px;
+    & > *:last-child{
+      color: #DC1414;
+    }
+  }
 }
