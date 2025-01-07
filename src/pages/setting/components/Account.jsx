@@ -1,5 +1,4 @@
 import styles from "./Account.module.scss"
-import {useState} from "react";
 
 
 const Account = () =>{
