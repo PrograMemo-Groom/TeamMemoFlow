@@ -3,26 +3,20 @@ import {useState} from "react";
 
 
 const Account = () =>{
-    const [selectedOption, setSelectedOption] = useState("");
-
-    const handleChange = (event) => {
-        setSelectedOption(event.target.value);
-    };
-
     return(
         <fieldset>
             <legend>계정</legend>
             <input className={styles.commonInput} placeholder="현재 이메일 주소"/>
             <input className={styles.commonInput} placeholder="현재 비밀번호"/>
             <form>
-                <select className={styles.gender} value={selectedOption} onChange={handleChange}>
+                <select className={styles.gender}>
                     <option className={styles.defaultOption} value="" disabled>
                       성별
                     </option>
                     <option value="option1">남자</option>
                     <option value="option2">여자</option>
                 </select>
-                <select className={styles.birth} value={selectedOption} onChange={handleChange}>
+                <select className={styles.birth}>
                     <option className={styles.defaultOption} value="" disabled>
                        생년월일
                     </option>

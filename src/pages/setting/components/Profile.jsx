@@ -5,7 +5,7 @@ const Profile = () => {
     "운동", "개발", "관심사", "관심사", "관심사", "관심사", "관심사", "관심사"
   ]
   return (
-    <div className={styles.container}>
+    <fieldset className={styles.container}>
       <img className={styles.profileImg} src="/logo.png" alt="프로필 이미지"/>
       <button>프로필 이미지 변경</button>
       <form>
@@ -16,15 +16,15 @@ const Profile = () => {
           maxLength="50"
           rows="4"
         />
-        <div className={styles.interestContainer}>
+        <ul className={styles.interestContainer}>
           {interestItem.map((item, index) => (
             <>
-              <div className={styles.interest}>{item}</div>
+              <li className={styles.interest}>{item}</li>
             </>
           ))}
-        </div>
+        </ul>
       </form>
-    </div>
+    </fieldset>
   )
 }
 
