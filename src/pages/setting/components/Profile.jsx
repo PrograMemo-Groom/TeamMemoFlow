@@ -6,7 +6,7 @@ const Profile = () => {
   ]
   return (
     <div className={styles.container}>
-      <img className={styles.profile_img} src="/logo.png" alt="프로필 이미지"/>
+      <img className={styles.profileImg} src="/logo.png" alt="프로필 이미지"/>
       <button>프로필 이미지 변경</button>
       <form>
         <input className={styles.name} type="text" placeholder="이름"/>
