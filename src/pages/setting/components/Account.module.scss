@@ -2,45 +2,43 @@
 @import "../../../styles/mixins";
 
 fieldset {
+  @include flex-column;
   width: 740px;
   margin-top: 61px;
-  display: flex;
-  flex-direction: column;
   gap: 18px;
 
-  legend{
+  legend {
+    margin-bottom: 8px;
+
     font-size: $font-size-header;
     font-weight: 600;
-    margin-bottom: 8px;
   }
 
   .commonInput {
-    width: 740px;
-    height: 61px;
-    border-radius: 8px;
-    background: #D9D9D9;
-    text-indent: 22px;
-    font-size: $font-size-base;
-    border: none;
-  }
-  form{
-    width: 740px;
-    @include flex-between;
-  }
-  select{
-    border: none;
-    background: #D9D9D9;
-    border-radius: 8px;
-    height: 61px;
-    font-size: $font-size-base;
-   text-indent: 22px;
+    @include common-input;
   }
 
-  .gender{
+  form {
+    @include flex-between;
+    width: 740px;
+  }
+
+  select {
+    border: none;
+    border-radius: 8px;
+    height: 61px;
+
+    font-size: $font-size-base;
+    text-indent: 25px;
+
+    background: #D9D9D9;
+  }
+
+  .gender {
     width: 25%;
   }
-  .birth{
+
+  .birth {
     width: 70%;
   }
-
 }

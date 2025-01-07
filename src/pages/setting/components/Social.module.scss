@@ -1,38 +1,32 @@
 @import "../../../styles/variables";
 @import "../../../styles/mixins";
 
-.container{
+.container {
+  @include flex-column;
   width: 740px;
   margin-top: 61px;
-  display: flex;
-  flex-direction: column;
   gap: 18px;
 
+  .title {
+    margin-bottom: 8px;
 
-
-  .title{
     font-size: $font-size-header;
     font-weight: 600;
-    margin-bottom: 8px;
   }
-  label{
+
+  label {
     position: relative;
   }
-  span{
+
+  span {
     position: absolute;
     top: 22px;
     right: 20%;
-    font-size: $font-size-header;
 
+    font-size: $font-size-header;
   }
 
-  input{
-    width: 740px;
-    height: 61px;
-    border-radius: 8px;
-    background: #D9D9D9;
-    text-indent: 22px;
-    font-size: $font-size-base;
-    border: none;
+  input {
+   @include common-input;
   }
 }
