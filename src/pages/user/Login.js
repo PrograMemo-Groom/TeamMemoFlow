@@ -1,7 +1,9 @@
 import React from 'react';
 import styles from './Login.module.scss';
+import {useNavigate} from "react-router-dom";
 
 const Login = () => {
+    const navigate = useNavigate();
     return (
         <div className={styles.container}>
             <div className={styles.wrapper}>
@@ -16,7 +18,7 @@ const Login = () => {
                         <label className={styles.label} htmlFor="userPw">비밀번호</label>
                         <input className={styles.input} id="userPw" type="password" placeholder="비밀번호"/>
                     </div>
-                    <label className={styles.findPw}>비밀번호를 잊으셨나요?</label>
+                    <label className={styles.findPw} onClick={() => navigate("/findpwd")}>비밀번호를 잊으셨나요?</label>
                     <button className={styles.loginButton}>로그인</button>
                     <button className={styles.joinButton}>회원가입</button>
                 </form>
