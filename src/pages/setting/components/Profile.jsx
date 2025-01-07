@@ -18,9 +18,7 @@ const Profile = () => {
         />
         <ul className={styles.interestContainer}>
           {interestItem.map((item, index) => (
-            <>
-              <li className={styles.interest}>{item}</li>
-            </>
+              <li key={`li_${index}`} className={styles.interest}>{item}</li>
           ))}
         </ul>
       </form>

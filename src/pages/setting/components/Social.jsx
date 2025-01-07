@@ -1,17 +1,18 @@
 import styles from "./Social.module.scss"
+import {FiArrowRight} from "react-icons/fi";
 
 
 const Social = ()=>{
     const socialItem = [
         {
             email: '@gmail.com',
-            placeholder: "구글"
+            sns: "구글"
         },{
             email: '@naver.com',
-            placeholder: "네이버"
+            sns: "네이버"
         },{
             email: '@kakao.com',
-            placeholder: "카카오톡"
+            sns: "카카오톡"
         }
     ]
     return(
@@ -19,9 +20,9 @@ const Social = ()=>{
             <legend className={styles.title}>소셜</legend>
             {
                 socialItem.map((item, index)=>(
-                    <label id={`social_${index}`}>
-                        <span>{item.email}</span>
-                        <input placeholder={`${item.placeholder} 이메일을 입력해주세요`}/>
+                    <label key={`social_${index}`}>
+                        <button>{`연동된 ${item.sns} 계정`}</button>
+                        <span><FiArrowRight/></span>
                     </label>
                 ))
             }

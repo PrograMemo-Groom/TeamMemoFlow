@@ -1,16 +1,20 @@
 import styles from "./Account.module.scss"
+import {FiArrowRight} from "react-icons/fi";
 
 
 const Account = () =>{
     return(
         <fieldset>
             <legend>계정</legend>
-            <input className={styles.commonInput} placeholder="현재 이메일 주소"/>
-            <input className={styles.commonInput} placeholder="현재 비밀번호"/>
+            <p>현재 이메일 주소</p>
+            <label className={styles.password}>
+                <button>비밀번호 변경</button>
+                <span><FiArrowRight/></span>
+            </label>
             <form>
                 <select className={styles.gender}>
                     <option value="" disabled>
-                      성별
+                        성별
                     </option>
                     <option value="option1">남자</option>
                     <option value="option2">여자</option>
@@ -24,7 +28,7 @@ const Account = () =>{
                     <option value="option3">Option 3</option>
                 </select>
             </form>
-            <input className={styles.commonInput} placeholder="핸드폰 번호"/>
+            <p>나의 핸드폰 번호</p>
         </fieldset>
     )
 }

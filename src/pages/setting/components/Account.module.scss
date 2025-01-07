@@ -14,9 +14,27 @@ fieldset {
     font-weight: 600;
   }
 
-  .commonInput {
+  p{
     @include common-input;
+    @include flex-center;
   }
+
+  .password{
+    position: relative;
+
+    button{
+      @include common-input;
+    }
+
+    span{
+      position: absolute;
+      top: 20px;
+      right: 2%;
+
+      font-size: $font-size-header;
+    }
+  }
+
 
   form {
     @include flex-between;

@@ -16,18 +16,14 @@ const Setting = () => {
     ]
     return (
         <div className={styles.container}>
-            <main>
-                <Profile/>
-                <Social/>
-                <Account/>
-            </main>
-            <footer>
-                <ul className={styles.bottomItem}>
-                    {bottomItem.map((item, index) => (
-                        <li id={`li_${index}`}>{item}</li>
-                    ))}
-                </ul>
-            </footer>
+            <Profile/>
+            <Social/>
+            <Account/>
+            <ul className={styles.bottomItem}>
+                {bottomItem.map((item, index) => (
+                    <li key={`li_${index}`}>{item}</li>
+                ))}
+            </ul>
         </div>
     )
 }
