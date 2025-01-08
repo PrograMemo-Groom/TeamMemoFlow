@@ -4,29 +4,50 @@ import Header from "./pages/header/Header";
 import Setting from "./pages/setting/Setting";
 import SideBar from "./pages/sidebar/SideBar";
 import Login from "./pages/user/Login";
+import {useSelector} from "react-redux";
 
-function LayOut(){
+function LayOut() {
 
-  return (
-    <>
-      <Header/>
-      <SideBar/>
-      <div className={styles.container} >
-        <Outlet/>
-      </div>
-    </>
-  );
+    return (
+        <>
+            <Header/>
+            <SideBar/>
+            <div className={styles.container}>
+                <Outlet/>
+            </div>
+        </>
+    );
+}
+
+const LayOutWithout = () => {
+    return (
+        <div className={styles.noLayoutContainer}>
+            <Outlet/>
+        </div>
+    )
 }
 
 function App() {
-  return (
-    <Routes>
-        <Route path="/" element={<LayOut/>}>
-          <Route index element={<Login/>}/>
-          <Route path="/setting" element={<Setting/>}/>
-        </Route>
-    </Routes>
-  );
+    const {isLogin} = useSelector((state) => state.common);
+    return (
+        <Routes>
+            {!isLogin ?
+                (
+                    <Route path="/" element={<LayOutWithout />}>
+                        <Route index element={<Login/>} />
+                        <Route path="/login" element={<Login />} />
+                        {/*<Route path="/join" element={<Join />} />*/}
+                        {/*<Route path="/findpwd" element={<FindPassword />} />*/}
+                        {/*<Route path="/findusr" element={<FindAccount />} />*/}
+                    </Route>
+                ) : (
+                    <Route path="/" element={<LayOut/>}>
+                        <Route path="/setting" element={<SettingPage/>}/>
+                    </Route>
+                )
+            }
+        </Routes>
+    );
 }
 
 export default App;
