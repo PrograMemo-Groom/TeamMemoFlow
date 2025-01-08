@@ -1,0 +1,62 @@
+@import "../../../styles/variables";
+@import "../../../styles/mixins";
+
+fieldset {
+  @include flex-column;
+  width: 740px;
+  margin-top: 61px;
+  gap: 18px;
+
+  legend {
+    margin-bottom: 8px;
+
+    font-size: $font-size-header;
+    font-weight: 600;
+  }
+
+  p{
+    @include common-input;
+    @include flex-center;
+  }
+
+  .password{
+    position: relative;
+
+    button{
+      @include common-input;
+    }
+
+    span{
+      position: absolute;
+      top: 20px;
+      right: 2%;
+
+      font-size: $font-size-header;
+    }
+  }
+
+
+  form {
+    @include flex-between;
+    width: 740px;
+  }
+
+  select {
+    border: none;
+    border-radius: 8px;
+    height: 61px;
+
+    font-size: $font-size-base;
+    text-indent: 25px;
+
+    background: #D9D9D9;
+  }
+
+  .gender {
+    width: 25%;
+  }
+
+  .birth {
+    width: 70%;
+  }
+}

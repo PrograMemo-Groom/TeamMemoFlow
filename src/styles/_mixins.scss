@@ -8,6 +8,28 @@
   justify-content: space-between;
   align-items: center;
 }
+@mixin flex-column{
+  display: flex;
+  flex-direction: column;
+}
+@mixin flex-column-center{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin common-input{
+  width: 740px;
+  height: 60px;
+  background: #D9D9D9;
+  border: none;
+  border-radius: 8px;
+
+  text-indent: 25px;
+  font-size: 20px;
+  font-weight: 600;
+}
 
 @mixin save-btn($color, $padding) {
   background-color: $color;

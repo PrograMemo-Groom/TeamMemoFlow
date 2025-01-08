@@ -1,0 +1,32 @@
+@import "../../../styles/variables";
+@import "../../../styles/mixins";
+
+.container {
+  @include flex-column;
+  width: 740px;
+  margin-top: 61px;
+  gap: 18px;
+
+  .title {
+    margin-bottom: 8px;
+
+    font-size: $font-size-header;
+    font-weight: 600;
+  }
+
+  label {
+    position: relative;
+  }
+
+  span {
+    position: absolute;
+    top: 20px;
+    right: 2%;
+
+    font-size: $font-size-header;
+  }
+
+  button {
+   @include common-input;
+  }
+}
