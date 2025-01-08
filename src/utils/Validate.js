@@ -22,10 +22,26 @@ export const validateLengthCheck = (value, label, pwCheck="") => {
         }
     }
     if (pwCheck)
-        return validatePasswordCheck(value, pwCheck, label);
+        return validatePasswordCheck(value, pwCheck);
+
+    if (label === USER_INFO_TYPES.PHONE) {
+        if(!validatePhoneNumberForm(value)) {
+            return {
+                success: false,
+                messages: `${label}은 숫자만 입력 가능합니다.`
+            }
+        }
+    } else if (label === USER_INFO_TYPES.EMAIL) {
+        if(!validateEmailForm(value)) {
+            return {
+                success: false,
+                messages: `사용할 수 없는 ${label} 형식입니다.`,
+            }
+        }
+    }
     return {success: true};
 }
-export const validatePasswordCheck = (value, pwCheck, label) => {
+export const validatePasswordCheck = (value, pwCheck) => {
     if (value !== pwCheck) {
         return {
             success: false,
@@ -33,4 +49,13 @@ export const validatePasswordCheck = (value, pwCheck, label) => {
         };
     }
     return {success: true};
+}
+
+const validateEmailForm = (value) => {
+    const regex = /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/i;
+    return regex.test(value);
+}
+const validatePhoneNumberForm = (value) => {
+    const regex = /^[0-9]*$/;
+    return regex.test(value);
 }
