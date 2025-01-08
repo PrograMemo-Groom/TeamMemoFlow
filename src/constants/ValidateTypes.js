@@ -10,3 +10,11 @@ export const USER_INFO_TYPES = {
     EMAIL: "이메일",
     PHONE: "핸드폰 번호",
 }
+export const USER_INFO_IDS = {
+    ID: "id",
+    PW: "password",
+    PWCK: "passwordCheck",
+    NAME: "name",
+    EMAIL: "email",
+    PHONE: "phone",
+}

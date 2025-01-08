@@ -1,13 +1,20 @@
 import React, {useEffect} from 'react';
 import styles from "../Login.module.scss";
 import {validateLengthCheck} from "../../../utils/Validate";
+import {useDispatch} from "react-redux";
+import {setIsFormValid} from "../../../store/slice/CommonSlice";
 
 const ValidateLabel = (props) => {
-    const {value, label, pwCheck="", isChecked} = props;
+    const {value, label, pwCheck="", tag} = props;
+    const dispatch = useDispatch();
     const [check, setCheck] = React.useState({success: true});
     useEffect(() => {
-        pwCheck ? setCheck(validateLengthCheck(value, label, pwCheck)) : setCheck(validateLengthCheck(value, label));
-    }, [value, label, pwCheck]);
+        const validateResult =
+        pwCheck ? validateLengthCheck(value, label, pwCheck) : validateLengthCheck(value, label);
+
+        setCheck(validateResult);
+        dispatch(setIsFormValid({tag:tag, isValid: validateResult.success}));
+    }, [value, label, pwCheck, dispatch, tag]);
 
     return (
         !check.success &&
