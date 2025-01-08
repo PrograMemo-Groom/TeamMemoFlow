@@ -80,6 +80,10 @@ $component-border-radius: 8px;
         cursor: pointer;
         user-select: none;
       }
+      .invalidData {
+        margin: $component-margin * 2;
+        color: red;
+      }
 
       button {
         cursor: pointer;
