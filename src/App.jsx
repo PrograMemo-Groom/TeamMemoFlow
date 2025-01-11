@@ -42,7 +42,7 @@ function App() {
                     </Route>
                 ) : (
                     <Route path="/" element={<LayOut/>}>
-                        <Route path="/setting" element={<SettingPage/>}/>
+                        <Route path="/setting" element={<Setting/>}/>
                     </Route>
                 )
             }
