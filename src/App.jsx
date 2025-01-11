@@ -5,6 +5,8 @@ import Setting from "./pages/setting/Setting";
 import SideBar from "./pages/sidebar/SideBar";
 import Login from "./pages/user/Login";
 import {useSelector} from "react-redux";
+import FindAccount from "./pages/user/FindAccount";
+import Join from "./pages/user/Join";
 
 function LayOut() {
 
@@ -36,8 +38,8 @@ function App() {
                     <Route path="/" element={<LayOutWithout />}>
                         <Route index element={<Login/>} />
                         <Route path="/login" element={<Login />} />
-                        {/*<Route path="/join" element={<Join />} />*/}
-                        {/*<Route path="/findpwd" element={<FindPassword />} />*/}
+                        <Route path="/join" element={<Join />} />
+                        <Route path="/findpwd" element={<FindAccount />} />
                         {/*<Route path="/findusr" element={<FindAccount />} />*/}
                     </Route>
                 ) : (

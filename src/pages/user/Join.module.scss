@@ -1,0 +1,14 @@
+@import "../../styles/mixins";
+@import "../../styles/variables";
+
+// 전역 설정
+$component-border-radius : 8px;
+
+.container {
+  //ui 조정 필요함
+  @include flex-center;
+  width: 500px;
+  height: 680px;
+  border: 1px solid #D7D7D7;
+  border-radius: $component-border-radius;
+}
