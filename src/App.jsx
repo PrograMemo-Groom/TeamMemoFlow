@@ -7,6 +7,7 @@ import Login from "./pages/user/Login";
 import {useSelector} from "react-redux";
 import FindAccount from "./pages/user/FindAccount";
 import Join from "./pages/user/Join";
+import TodoMain from "./pages/main/TodoMain";
 
 function LayOut() {
 
@@ -44,6 +45,7 @@ function App() {
                     </Route>
                 ) : (
                     <Route path="/" element={<LayOut/>}>
+                        <Route index element={<TodoMain />} />
                         <Route path="/setting" element={<Setting/>}/>
                     </Route>
                 )
