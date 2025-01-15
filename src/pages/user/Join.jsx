@@ -14,6 +14,11 @@ const Join = () => {
         passwordCheck: "",
         email: "",
     });
+    const [joinSettings, setJoinSettings] = React.useState([
+        {option:"필수", words:"만 14세 이상입니다.", checked:true},
+        {option:"선택", words:"마케팅 정보 수신에 동의합니다.", checked:false},
+        {option:"선택", words:"기타 등등 내용", checked:false},
+    ])
 
     const [isChecked, setIsChecked] = React.useState(false);
     const {isFormValid} = useSelector((state) => state.common);
@@ -29,6 +34,15 @@ const Join = () => {
                 [tag]: value
             }));
         }
+    }
+    const handleOnChangeChecked = (isChecked, index) => {
+        setJoinSettings((prevState) =>
+            prevState.map((item, idx) =>
+                idx === index ? {...item, checked:isChecked} : item
+            )
+        );
+        // joinSettings[index] = value;
+        console.log(joinSettings);
     }
 
     const handleJoinUser = (e) => {
@@ -63,7 +77,7 @@ const Join = () => {
                                tag={USER_INFO_IDS.PW}
                                onChange={handleChangeUserInfo}
                                isChecked={isChecked}
-                    />
+                    >비밀번호 (6자리 이상)</FormInput>
                     <FormInput id="userPwCK"
                                label={USER_INFO_TYPES.PWCK}
                                type="password"
@@ -86,7 +100,18 @@ const Join = () => {
                                tag={USER_INFO_IDS.EMAIL}
                                onChange={handleChangeUserInfo}
                                isChecked={isChecked}
-                    />
+                    >이메일 등록</FormInput>
+
+                    {joinSettings?.map((joins, key) => (
+                        <div className={styles.checkWrapper} key={`joinSetting-${key}`}>
+                            <input type="checkbox" className={styles.checkBox} checked={joins.checked}
+                                   onChange={(e) => handleOnChangeChecked(e.target.checked, key)}
+                            />
+                            <span className={joins.option === "필수" ? styles.optionsColor : styles.optionsDefaultColor}>{joins.option}</span>
+                            <span>|</span>
+                            <span>{joins.words}</span>
+                        </div>
+                    ))}
                     <button className={styles.loginButton} type="submit">회원가입</button>
                     <button className={styles.joinButton} type="button" onClick={() => navigate("/")}>돌아가기</button>
                 </form>

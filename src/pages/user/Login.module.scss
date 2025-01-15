@@ -84,6 +84,50 @@ $component-border-radius: 8px;
         margin: $component-margin * 2;
         color: red;
       }
+      .checkWrapper {
+        display: flex;
+        position: relative;
+        align-items: center;
+        align-content: center;
+        gap: 8px;
+        padding-top: 10px;
+        .checkBox {
+          -webkit-appearance: none; /* Safari와 크롬 */
+          -moz-appearance: none;    /* Firefox */
+          appearance: none;         /* 기타 브라우저 */
+          width: 20px;
+          height: 20px;
+          border-radius: 50px;
+          border: 1px solid gray;
+          outline: none;
+          background-color: white;
+        }
+        .checkBox:checked {
+          background-color: #007bff; /* 체크 상태 배경색 */
+          border-color: #007bff;     /* 체크 상태 테두리 색상 */
+        }
+
+        .checkBox:checked::after {
+          content: '';                /* 체크 표시 생성 */
+          position: absolute;
+          top: calc(50% + 5px);
+          left: 14px;
+          transform: translate(-50%, -50%);
+          width: 10px;                /* 체크 표시 크기 */
+          height: 10px;
+          border-radius: 50%;         /* 체크 표시도 원형 */
+          background-color: white;    /* 체크 표시 색상 */
+        }
+        span {
+          margin-bottom: 1px;
+        }
+        .optionsColor {
+          color: red;
+        }
+        .optionsDefaultColor {
+          color: inherit;
+        }
+      }
 
       button {
         cursor: pointer;
