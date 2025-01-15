@@ -2,7 +2,7 @@ import React from 'react';
 import styles from "../Login.module.scss";
 import ValidateLabel from "./ValidateLabel";
 
-const FormInput = ({id, value, type="text", label, pwCheck="", isChecked=true, onChange, tag}) => {
+const FormInput = ({id, value, type="text", label, pwCheck="", isChecked=true, onChange, tag, children}) => {
     return (
         <>
             <div className={styles.inputWrapper}>
@@ -10,7 +10,7 @@ const FormInput = ({id, value, type="text", label, pwCheck="", isChecked=true, o
                 <input className={styles.input}
                        id={id}
                        type={type}
-                       placeholder={label}
+                       placeholder={children || label}
                        value={value}
                        onChange={(e) => onChange(e.target.value, tag)}
                 />
